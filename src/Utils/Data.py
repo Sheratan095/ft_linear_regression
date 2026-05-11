@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd # type: ignore[import-untyped] (Used to silence type checking for pandas, which is not fully typed)
 
 def load_data(file_path):
 
