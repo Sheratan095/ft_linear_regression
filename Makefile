@@ -15,4 +15,11 @@ estimate:
 
 run: train
 
+plot:
+	$(PYTHON) src/Plot/Plot.py data/data.csv
+
+clean:
+	rm -rf .venv
+	rm -rf **/*__pycache__
+
 .DEFAULT_GOAL := train

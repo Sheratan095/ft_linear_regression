@@ -1,4 +1,11 @@
-from Data import load_data
+import sys
+import os
+
+# Ensure project src directory is on sys.path so `Utils` package is importable
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from Utils.Data import load_data
+
 
 def main():
 	filePath = "data/data.csv"
