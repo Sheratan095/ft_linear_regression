@@ -8,10 +8,10 @@ setup:
 	@$(PYTHON) --version
 
 train:
-	$(PYTHON) src/Train.py
+	$(PYTHON) src/Train/Train.py
 
 estimate:
-	$(PYTHON) src/Estimate.py
+	$(PYTHON) src/Estimate/Estimate.py
 
 run: train
 
