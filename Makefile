@@ -20,8 +20,11 @@ estimate:
 
 run: train
 
-plot:
-	$(PYTHON) src/Plot/Plot.py data/data.csv
+plot-data:
+	$(PYTHON) src/Plot/Plot.py data/data.csv --data-only
+
+plot-regression:
+	$(PYTHON) src/Plot/Plot.py data/data.csv --both
 
 clean:
 	@echo "Cleaning project artifacts..."

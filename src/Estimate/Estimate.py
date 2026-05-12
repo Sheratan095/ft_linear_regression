@@ -9,22 +9,23 @@ def load_thetas(filepath="data/theta.json"):
 	"""
 	if not os.path.exists(filepath):
 		print(f"Warning: Model not trained yet or {filepath} not found. Using default values (0).")
-		return 0.0, 0.0
+		return (0.0, 0.0)
 	
 	try:
 		with open(filepath, 'r') as f:
 			data = json.load(f)
-			return data.get("theta0", 0.0), data.get("theta1", 0.0)
+			return (data.get("theta0", 0.0), data.get("theta1", 0.0))
+
 	except (IOError, json.JSONDecodeError):
 		print("Error reading thetas file. Using default values (0).")
-		return 0.0, 0.0
+		return (0.0, 0.0)
 
 def predict_price(mileage, theta0, theta1):
 	"""
 	Uses the linear regression hypothesis: estimatePrice(mileage) = theta0 + (theta1 * mileage)
 	to predict the price of a car for a given mileage.
 	"""
-	return theta0 + (theta1 * mileage)
+	return (theta0 + (theta1 * mileage))
 
 def main():
 	# Load the parameters (which might be 0 if train_model hasn't been run)
@@ -57,6 +58,7 @@ def main():
 			
 		except ValueError:
 			print("Invalid input! Please enter a numeric value for the mileage.\n")
+
 		except EOFError:
 			# Handles unexpected interactions (like pressing Ctrl+D)
 			break
